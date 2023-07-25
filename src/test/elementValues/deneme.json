@@ -1,0 +1,12 @@
+[
+  {
+    "key": "Logo",
+    "value": "(//yt-icon[@id='logo-icon'])[1]",
+    "type": "xpath"
+  },
+  {
+    "key": "search",
+    "value": "(//yt-icon[@id='logo-icon'])[1]",
+    "type": "xpath"
+  },
+]
