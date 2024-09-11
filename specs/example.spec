@@ -3,8 +3,9 @@ Specification Heading
 
 Test
 ---------------------------
-* Selamın hello
-* "https://www.youtube.com" adresine git
+* "Chrome" ile çalıştır
+* "5" saniye bekle
 * Sayfanın yüklenmesi beklenir
+* "https://www.google.com" adresine git
 * Sitede geri git
 * Driver'ı kapat

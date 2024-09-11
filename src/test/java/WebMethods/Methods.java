@@ -1,19 +1,18 @@
 package WebMethods;
 
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+@Log4j
 
 public class Methods {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     FluentWait<WebDriver> wait;
 
     JavascriptExecutor jsdriver;
@@ -35,7 +34,7 @@ public class Methods {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        logger.info(seconds+ "saniye beklendi");
+        log.info(seconds+ "saniye beklendi");
     }
     public void waitByMilliSeconds(long Milliseconds) {
         try {
@@ -43,7 +42,7 @@ public class Methods {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        logger.info(+Milliseconds+ "milli saniye beklendi");
+        log.info(+Milliseconds+ "milli saniye beklendi");
     }
 
 
@@ -66,22 +65,22 @@ public class Methods {
 
         boolean isPageLoaded = (boolean) js.executeScript("return document.readyState").equals("complete");
         if (isPageLoaded){
-            logger.info("Sayfa yüklendi");
+            log.info("Sayfa yüklendi");
         }else {
-            logger.info("Sayfa yüklenmedi");
+            log.info("Sayfa yüklenmedi");
         }
     }
-    public void setLogger(String log){
-        logger.info(""+log+"");
+    public void setlog(String text){
+        log.info(""+text+"");
     }
 
     public void clickElement(By by){
         findElement(by).click();
-        logger.info("Elemente tıklandı");
+        log.info("Elemente tıklandı");
     }
     public void clearElement(By by){
         findElement(by).clear();
-        logger.info("Elementin Text alanı temizlendi");
+        log.info("Elementin Text alanı temizlendi");
     }
 
     public void sendKeys(By by,String text){
@@ -118,7 +117,7 @@ public class Methods {
         webDriver.switchTo().window((String)this.listTabs().get(tabNumber));
     }
     public void navigateTo(String url) {
-        webDriver.get(url);
+        webDriver.navigate().to(url);
     }
 
     public void navigateToBack() {
